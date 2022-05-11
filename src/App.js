@@ -7,9 +7,6 @@ import List from "./components/List";
 
 export default function App() {
   const dispatch = useDispatch();
-  const current = useSelector((data) => data.currentCountry);
-  const summary = useSelector((data) => data.summary);
-  console.log(summary);
   useEffect(() => {
     dispatch(getAllCountries());
     dispatch(getSummary());
