@@ -18,7 +18,7 @@ export default function App() {
         <Select />
         <div className="main">
           <div className="main__left">
-            <List current={current} />
+            <List />
           </div>
           <div className="main__right">
             <h3 className="main-right__title">
