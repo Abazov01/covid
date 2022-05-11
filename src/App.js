@@ -6,21 +6,19 @@ import Select from "./components/Select";
 import List from "./components/List";
 
 export default function App() {
-  const [data, setData] = useState("kyrgyzstan");
   const dispatch = useDispatch();
-  const countries = useSelector((data) => data.allCountries);
   const current = useSelector((data) => data.currentCountry);
   const summary = useSelector((data) => data.summary);
   console.log(summary);
   useEffect(() => {
     dispatch(getAllCountries());
     dispatch(getSummary());
-    dispatch(getOneCountry(data));
-  }, [data]);
+    dispatch(getOneCountry("kyrgyzstan"));
+  }, []);
   return (
     <div className="wrapper">
       <div className="container">
-        <Select setData={setData} countries={countries} />
+        <Select />
         <div className="main">
           <div className="main__left">
             <List current={current} />
@@ -30,7 +28,6 @@ export default function App() {
               Top recovered cases in the world
             </h3>
             <p className="main-right__count">{summary.NewDeaths}</p>
-            
           </div>
         </div>
       </div>

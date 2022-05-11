@@ -1,16 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { getOneCountry } from './../actions/country';
 
 export default function Select(props) {
-  
+  const [data, setData] = useState()
+  const countries = useSelector((data) => data.allCountries);
+  const dispatch = useDispatch()
+  useEffect(()=>{
+    dispatch(getOneCountry(data))
+  },[data])
   return (
     <div>
       <select
-        onChange={(e) => props.setData(e.target.value)}
+        onChange={(e) => setData(e.target.value)}
         className="select"
         name=""
       >
-        {props.countries ? (
-          props.countries.map((e) => (
+        {countries ? (
+          countries.map((e) => (
             <option key={e.Slug} value={e.Slug}>
               {e.Country}
             </option>
