@@ -1,7 +1,9 @@
 import React from "react";
 import Sceleton from "./Sceleton";
+import { useSelector } from "react-redux";
 
-export default function List(props) {
+export default function List() {
+  const current = useSelector((data) => data.currentCountry);
   const month = {
     "01": "January",
     "02": "February",
@@ -14,12 +16,12 @@ export default function List(props) {
     "09": "September",
     10: "October",
     11: "November",
-    11: "December",
+    12: "December",
   };
   return (
     <div className="list">
-      {props ? (
-        props.current.map((e, i) => {
+      {current ? (
+        current.map((e, i) => {
           let date = e.Date.slice(5, 7);
           let day = e.Date.slice(8, 10);
           return (
