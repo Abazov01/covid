@@ -1,5 +1,5 @@
 import React from "react";
-import Sceleton from "./Sceleton";
+import Sceleton from "./Sceleton.js";
 import { useSelector } from "react-redux";
 
 export default function List() {

@@ -15,7 +15,7 @@
 .select {
   margin-top: 50px;
   height: 40px;
-  width: 400px;
+  width: 40%;
   font-size: 20px;
 }
 
@@ -32,6 +32,7 @@
   border-radius: 10px;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .list__day {
@@ -45,11 +46,13 @@
   display: flex;
   flex-direction: column;
   width: 48%;
+  flex-wrap: wrap;
 }
 .childs {
   display: flex;
   font-size: 13px;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .childs:first-child {
   margin-bottom: 5px;
@@ -65,10 +68,13 @@
   display: flex;
   width: 50%;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .main {
   display: flex;
+  flex-wrap: wrap;
+
   width: 100%;
   justify-content: space-between;
   margin-top: 50px;
